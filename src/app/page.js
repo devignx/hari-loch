@@ -37,7 +37,7 @@ export default function Home() {
             </div>
 
             <div className="lg:max-w-[60vw] w-full relative md:py-24">
-                <div className="w-11/12 mt-16 md:mt-0 md:w-1/2 flex flex-wrap md:px-24 mx-auto md:mx-0 text-center md:text-left mb-8 md:mb-24 pr-0 tracking-tighter">
+                <div className="w-11/12 mt-16 md:mt-0 md:w-2/3 flex flex-wrap md:px-24 mx-auto md:mx-0 text-center md:text-left mb-8 md:mb-24 pr-0 tracking-tighter">
                     <Image
                         src={bell}
                         alt="bell"
