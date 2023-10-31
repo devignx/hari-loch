@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .anim {
+        @apply transition-all duration-[300ms] ease-in-out;
+    }
+    .anim-slo {
+        @apply transition-all duration-[800ms] ease-in-out;
+    }
+}
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+.maskk {
+    mask-image: linear-gradient(
+        to right,
+        transparent 1%,
+        black 15%,
+        black 85%,
+        transparent 99%
+    );
+}
+.maskkk {
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 70%,
+        transparent 99%
+    );
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+body {
+    color: #fff;
+    min-height: 100vh;
+    background-color: black;
+}
+
+/*---------------HP Classics---------------*/
+
+/*centering absolute stuff*/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.centerh {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.centerv {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.centerrr {
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Selection controls*/
+
+::-moz-selection {
+    color: rgb(40, 8, 8);
+    background: rgba(255, 255, 255);
+}
+
+::selection {
+    color: rgb(40, 8, 8);
+    background: rgba(255, 255, 255);
+}
+
+.noselect {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+/*media hacks*/
+
+.pc {
+    visibility: visible;
+    display: flex;
+}
+
+.mob {
+    visibility: hidden;
+    display: none;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*z-index hacks*/
+
+.toppp {
+    z-index: 9999;
+}
+
+.topppp {
+    z-index: 99999;
+}
+.toppppp {
+    z-index: 9999999;
+}
+
+.bottt {
+    z-index: -9999;
+}
+
+/*others*/
+
+abbr[title] {
+    border-bottom: none !important;
+    cursor: inherit !important;
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .mob {
+        visibility: visible;
+        display: flex;
+    }
+    .pc {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/*---------------HP Classics---------------*/
