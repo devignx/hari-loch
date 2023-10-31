@@ -52,7 +52,7 @@ export default function Home() {
                         becomes active.
                     </p>
                 </div>
-                <div className="h-[30rem] md:absolute top-0 md:translate-y-24 right-12 w-4/6 md:w-1/3 mx-auto maskkk">
+                <div className="h-[35rem] md:absolute top-0 md:translate-y-24 right-12 w-4/6 md:w-[35%] mx-auto maskkk">
                     <NotificationCarousel />
                 </div>
 

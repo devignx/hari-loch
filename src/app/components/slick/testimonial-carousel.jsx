@@ -12,7 +12,7 @@ const TestCarousel = () => {
         infinite: true,
         pauseOnHover: false,
         slidesToShow: 2,
-        slidesToScroll: 1,
+        slidesToScroll: 0.5,
         responsive: [
             {
                 breakpoint: 480,
@@ -24,7 +24,7 @@ const TestCarousel = () => {
         ],
         autoplay: true,
         speed: 2000,
-        autoplaySpeed: 200,
+        autoplaySpeed: 0,
         cssEase: "linear",
     };
 

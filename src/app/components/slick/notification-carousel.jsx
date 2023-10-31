@@ -13,11 +13,10 @@ const NotificationCarousel = () => {
         dots: false,
         infinite: true,
         pauseOnHover: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 2,
+        slidesToScroll: 0.5,
         autoplay: true,
-        speed: 1000,
-        autoplaySpeed: 200,
+        autoplaySpeed: 0,
         cssEase: "linear",
     };
 
