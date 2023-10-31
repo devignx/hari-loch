@@ -32,11 +32,11 @@ export default function Home() {
                 <Image
                     src={bg}
                     alt="bg"
-                    className=" w-screen md:min-w-[75vw] noselect fixed top-0 opacity-50 md:opacity-100 md:-left-[15rem] object-cover h-screen"
+                    className=" w-screen md:min-w-[75vw] noselect fixed md:-top-36 opacity-50 md:opacity-100 md:-left-[15rem] h-screen md:h-auto object-cover"
                 />
             </div>
 
-            <div className="lg:max-w-[60vw] w-full relative md:py-24">
+            <div className="lg:max-w-[60vw] w-full relative md:py-24 md:pb-0">
                 <div className="w-11/12 mt-16 md:mt-0 md:w-2/3 flex flex-wrap md:px-24 mx-auto md:mx-0 text-center md:text-left mb-8 md:mb-24 pr-0 tracking-tighter">
                     <Image
                         src={bell}
@@ -56,7 +56,7 @@ export default function Home() {
                     <NotificationCarousel />
                 </div>
 
-                <div className="w-11/12 md:w-full md:mt-0 flex flex-wrap md:px-24 mx-auto text-center md:text-right mb-8 md:mb-24 pr-0 md:ml-auto md:mr-0 tracking-tighter">
+                <div className="w-11/12 md:w-full -mt-40 md:mt-0 flex flex-wrap md:px-24 mx-auto text-center md:text-right mb-8 md:mb-24 pr-0 md:ml-auto md:mr-0 tracking-tighter">
                     <div className=" flex justify-between w-full flex-wrap-reverse lg:flex-nowrap ">
                         <Image
                             src={coh}
@@ -87,13 +87,13 @@ export default function Home() {
                         </h1>
                         <hr className="border-white border-1 mix-blend-overlay my-6" />
                     </div>
-                    <div className="w-11/12 md:w-[78%] pointer-events-none md:ml-auto md:mr-0">
+                    <div className="w-11/12 md:w-[78%] md:ml-auto md:mr-0">
                         <Image
                             src={logo}
                             alt="bell"
-                            className="w-16 pc left-0 translate-x-24 absolute"
+                            className="w-16 mb-0 pc left-0 translate-y-24 translate-x-24 absolute"
                         />
-                        <div className="maskk w-full min-h-[10rem]">
+                        <div className="maskk w-full">
                             <TestCarousel />
                         </div>
                     </div>
@@ -114,13 +114,13 @@ export default function Home() {
                     <input
                         type="email"
                         placeholder="Email"
-                        className="p-4 mt-5 text-zinc-800 peer rounded-md border-2 border-black/10 focus:drop-shadow-md drop-shadow-sm anim outline-none"
+                        className="p-4 mt-5 hover:drop-shadow-lg text-zinc-800 peer rounded-md border-2 border-black/10 focus:drop-shadow-md drop-shadow-sm anim outline-none"
                         required
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     />
                     <button
                         type="submit"
-                        className="bg-zinc-800 mb-5 text-center text-white rounded-md p-4"
+                        className="bg-zinc-800 mb-5 ring-2 hover:ring-blue-500 ring-blue-500/0 anim text-center text-white rounded-md p-4"
                     >
                         Get Started
                     </button>
@@ -146,13 +146,13 @@ export default function Home() {
                         <input
                             type="email"
                             placeholder="Email"
-                            className="p-4 mt-5 text-zinc-800 peer rounded-md border-2 border-black/10 focus:drop-shadow-md drop-shadow-sm anim outline-none"
+                            className="p-4 mt-5 hover:drop-shadow-lg text-zinc-800 peer rounded-md border-2 border-black/10 focus:drop-shadow-md drop-shadow-sm anim outline-none"
                             required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         />
                         <button
                             type="submit"
-                            className="bg-zinc-800 mb-5 text-center text-white rounded-md p-4"
+                            className="bg-zinc-800 ring-2 hover:ring-blue-500 ring-blue-500/0 anim mb-5 text-center text-white rounded-md p-4"
                         >
                             Get Started
                         </button>
@@ -160,6 +160,12 @@ export default function Home() {
                             You&apos;ll receive an email with an invite link to
                             join.
                         </p>
+                        <button
+                            onClick={() => setOpen(false)}
+                            className="text-red-400 underline "
+                        >
+                            Close
+                        </button>
                     </form>
                 </section>
             )}

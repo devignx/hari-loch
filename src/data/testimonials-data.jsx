@@ -11,7 +11,7 @@ export const testData = [
     },
     {
         name: "Shiv S",
-        msg: `Managing my own portfolio is helpful and well designed. What's really interesting is watching the whales though. No one else has made whale tracking so simple.`,
+        msg: `Managing my own portfolio is helpful and well designed. What's really interesting is watching the whales though....`,
         org: "Co-Founder Magik Labs",
     },
 ];
