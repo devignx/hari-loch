@@ -14,10 +14,11 @@ const NotificationCarousel = () => {
         infinite: true,
         pauseOnHover: false,
         slidesToShow: 2,
-        slidesToScroll: 0.5,
+        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
-        cssEase: "linear",
+        speed: 2500,
+        pauseOnHover: false,
     };
 
     const imgs = [card1, card2, card3];
