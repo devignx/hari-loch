@@ -11,12 +11,49 @@ import Testimonials from "./components/testimonials";
 import TestCarousel from "./components/slick/testimonial-carousel";
 import NotificationCarousel from "./components/slick/notification-carousel";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import { TbChevronRight } from "react-icons/tb";
 import { useRouter } from "next/navigation";
 export default function Home() {
     const router = useRouter();
     const [open, setOpen] = useState(false);
+    const carouselRef = useRef(null);
+    const [dragStartX, setDragStartX] = useState(null);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleDragStart = (e) => {
+        setDragStartX(e.clientX);
+        e.preventDefault();
+    };
+
+    const handleDrag = (e) => {
+        if (dragStartX === null) return;
+        const dragDelta = e.clientX - dragStartX;
+        carouselRef.current.scrollLeft = scrollLeft - dragDelta;
+        carouselRef.current.classList.add("cursor-grabbing");
+    };
+
+    const handleDragEnd = () => {
+        setDragStartX(null);
+        setScrollLeft(carouselRef.current.scrollLeft);
+        carouselRef.current.classList.remove("cursor-grabbing");
+    };
+
+    const handleScrollLeft = () => {
+        carouselRef.current.scrollTo({
+            left: carouselRef.current.scrollLeft - window.innerWidth * 1,
+            behavior: "smooth",
+        });
+    };
+
+    const handleScrollRight = () => {
+        carouselRef.current.scrollTo({
+            left: carouselRef.current.scrollLeft + window.innerWidth * 1,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <>
             <div className="centerh mob pointer-events-none fixed bottom-8 topppp w-full">
@@ -87,14 +124,36 @@ export default function Home() {
                         </h1>
                         <hr className="border-white border-1 mix-blend-overlay my-6" />
                     </div>
-                    <div className="w-11/12 md:w-[78%] md:ml-auto md:mr-0">
+                    <div className="w-11/12 md:w-[78%] mx-auto relative md:ml-auto md:mr-12">
                         <Image
                             src={logo}
                             alt="bell"
-                            className="w-16 mb-0 pc left-0 translate-y-24 translate-x-24 absolute"
+                            className="w-16 mb-0 pc translate-y-24 -translate-x-24 absolute"
                         />
-                        <div className="maskk w-full">
+
+                        <div
+                            ref={carouselRef}
+                            onMouseDown={handleDragStart}
+                            onMouseMove={handleDrag}
+                            onMouseUp={handleDragEnd}
+                            onMouseLeave={handleDragEnd}
+                            className=" cursor-grab flex gap-4 overflow-x-scroll maskk w-full"
+                        >
                             <TestCarousel />
+                        </div>
+                        <div className="flex w-full md:w-[105%] md:-left-5  justify-between shrink-0 centerv gap-4 absolute -0 toppppp 2">
+                            <button
+                                onClick={handleScrollLeft}
+                                className="w-8 h-8 flex backdrop-blur-lg justify-center items-center bg-white/20 rounded-full drop-shadow-md"
+                            >
+                                <TbChevronRight className=" rotate-180" />
+                            </button>
+                            <button
+                                onClick={handleScrollRight}
+                                className="w-8 h-8 flex backdrop-blur-lg justify-center items-center bg-white/20 rounded-full drop-shadow-md"
+                            >
+                                <TbChevronRight />
+                            </button>
                         </div>
                     </div>
                 </div>
